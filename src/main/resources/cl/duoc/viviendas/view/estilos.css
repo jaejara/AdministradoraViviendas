@@ -1,0 +1,4 @@
+.titulo { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1f2937; }
+.mensaje-ok { -fx-text-fill: #1b7a34; -fx-font-weight: bold; -fx-font-size: 13px; }
+.mensaje-error { -fx-text-fill: #b91c1c; -fx-font-weight: bold; -fx-font-size: 13px; }
+.mensaje-info { -fx-text-fill: #374151; -fx-font-weight: bold; -fx-font-size: 13px; }

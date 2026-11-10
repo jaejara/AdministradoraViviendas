@@ -1,0 +1,69 @@
+PROYECTO BASE - EVALUACIÓN PARCIAL 2
+Empresa administradora de viviendas - DSY1102 Programación Orientada a Objetos
+======================================================================
+
+CONTENIDO
+---------
+pom.xml                                   Proyecto Maven configurado para Java 21, con las
+                                          dependencias de JavaFX ya incluidas.
+src/main/java/cl/duoc/viviendas/
+    Launcher.java                         Punto de entrada: ejecuta esta clase para iniciar la aplicación.
+    App.java                              Aplicación JavaFX: carga la vista principal y abre la ventana.
+src/main/java/cl/duoc/viviendas/model/    Modelo del sistema (ya implementado y probado):
+    ConEstacionamiento.java
+    Vivienda.java
+    Departamento.java
+    Casa.java
+src/main/resources/cl/duoc/viviendas/view/  Carpeta para las vistas FXML.
+
+CÓMO ABRIR EL PROYECTO EN INTELLIJ IDEA
+---------------------------------------
+1. Descomprime este archivo en una carpeta de trabajo.
+2. En IntelliJ IDEA: File > Open... y selecciona la carpeta AdministradoraViviendas_EP2_Base.
+3. Si IntelliJ lo pregunta, elige "Trust Project" y abre el proyecto como proyecto Maven.
+4. Verifica que el JDK del proyecto sea 21 (File > Project Structure > Project).
+
+CÓMO EJECUTAR LA APLICACIÓN
+---------------------------
+- Ejecuta la clase Launcher (botón Run junto al método main).
+- La clase App carga la vista principal desde:
+      src/main/resources/cl/duoc/viviendas/view/main-view.fxml
+  Debes crear ese archivo con Scene Builder. Mientras no exista, la aplicación
+  se detiene con el mensaje "No se encontró la vista principal".
+
+LO QUE DEBES AGREGAR AL pom.xml
+-------------------------------
+- La dependencia de la librería Gson, en el lugar indicado por el comentario.
+  Luego recarga el proyecto Maven (ícono "Load Maven Changes" o
+  clic derecho en pom.xml > Maven > Reload Project).
+
+IMPORTANTE
+----------
+- No modifiques la lógica de las clases del modelo.
+- No es necesario modificar Launcher ni App.
+- Puedes agregar tus propios paquetes, clases y recursos al proyecto.
+
+OPERACIONES DISPONIBLES EN EL MODELO
+------------------------------------
+Vivienda (clase abstracta)
+    getCodigo()       / setCodigo(String)
+    getSuperficie()   / setSuperficie(double)
+    getHabitaciones() / setHabitaciones(int)
+    calcularCostoArriendo()   costo del arriendo según el tipo de vivienda
+    getTipo()                 "Departamento" o "Casa"
+    toString()                código de propiedad y superficie de la vivienda
+    Los métodos set rechazan datos inválidos con un mensaje que explica el motivo:
+        código:       no puede ser nulo ni vacío
+        superficie:   entre 20 y 500 metros cuadrados
+        habitaciones: mayor que cero
+
+Departamento (extiende Vivienda, implementa ConEstacionamiento)
+    Departamento(codigo, superficie, habitaciones, piso, gastoComunAlDia)
+    getPiso()           / setPiso(int)
+    isGastoComunAlDia() / setGastoComunAlDia(boolean)
+    tieneEstacionamientoAsignado()
+    asignarEstacionamiento()
+
+Casa (extiende Vivienda)
+    Casa(codigo, superficie, habitaciones, tienePatio)
+    isTienePatio() / setTienePatio(boolean)

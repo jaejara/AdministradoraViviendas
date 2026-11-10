@@ -1,0 +1,14 @@
+[
+  {
+    "tienePatio": true,
+    "codigo": "PROP-C01",
+    "superficie": 120.0,
+    "habitaciones": 4
+  },
+  {
+    "tienePatio": false,
+    "codigo": "PROP-C02",
+    "superficie": 90.0,
+    "habitaciones": 3
+  }
+]
